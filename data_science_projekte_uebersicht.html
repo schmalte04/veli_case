@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Data Science Projekte Übersicht</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6; 
+            color: #333;
+        }
+        h1 { 
+            color: #2c3e50; 
+            border-bottom: 3px solid #3498db; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+        }
+        h2 { 
+            color: #34495e; 
+            border-bottom: 2px solid #bdc3c7; 
+            padding-bottom: 5px; 
+            margin-top: 40px; 
+        }
+        h3 { 
+            color: #5d6d7e; 
+            margin-top: 25px; 
+        }
+        code { 
+            background-color: #f8f9fa; 
+            padding: 2px 5px; 
+            border-radius: 3px; 
+            font-family: 'Monaco', 'Consolas', monospace; 
+            font-size: 0.9em;
+        }
+        pre { 
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            border-radius: 5px; 
+            overflow-x: auto; 
+            border-left: 4px solid #3498db;
+        }
+        ul, ol { 
+            margin-left: 20px; 
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        strong { 
+            color: #2c3e50; 
+            font-weight: 600;
+        }
+        .toc { 
+            background-color: #ecf0f1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        .cell { 
+            margin-bottom: 30px; 
+        }
+        a { 
+            color: #3498db; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #3498db, transparent);
+            margin: 30px 0;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        @media print {
+            body { font-size: 12pt; }
+            h1 { page-break-before: always; }
+            h2 { page-break-before: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Data Science Projekte Übersicht</h1>
+
+<div class="toc">
+<h2>📋 Inhaltsverzeichnis</h2>
+<ol>
+<li><a href="#overview">Projekt-Übersicht & Technologie Stack</a></li>
+<li><strong>Fußball Data Science Projekte:</strong>
+   <ul>
+   <li><a href="#in-play-modellierung">2. In-Play Modellierung (Zeitreihen)</a></li>
+   <li><a href="#anomalie-detection">3. Trading Data Anomalie Detection</a></li>
+   </ul>
+</li>
+<li><strong>VELI Transfer & Implementation:</strong>
+   <ul>
+   <li><a href="#veli-transfer">4. Transfer auf VELI Hausnotrufsysteme</a></li>
+   <li><a href="#technische-implementierung">5. Technische Implementierung</a></li>
+   <li><a href="#monitoring-skalierung">6. Monitoring & Skalierung (>100 Häuser)</a></li>
+   </ul>
+</li>
+<li><strong>Practical Resources:</strong>
+   <ul>
+   <li><a href="#challenges">7. Challenges & Herausforderungen</a></li>
+   <li><a href="#data-cleaning-cheatsheet">8. Data Cleaning Cheatsheet (Python)</a></li>
+   </ul>
+</li>
+</ol>
+</div>
+
+<div class="section">
+<h2 id="overview">1. Projekt-Übersicht & Technologie Stack</h2>
+
+<h3>🎯 Executive Summary</h3>
+<p>Drei erfolgreich umgesetzte Data Science Projekte im <strong>Fußball-Bereich</strong>, die sich direkt auf <strong>VELI Hausnotrufsysteme</strong> übertragen lassen:</p>
+
+<div style="background-color: #e8f4fd; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db; margin: 20px 0;">
+<ol>
+<li><strong>In-Play Modellierung</strong> → <em>Echtzeit-Verhaltensmuster-Erkennung in Energiedaten</em></li>
+<li><strong>Trading Anomalie Detection</strong> → <em>Notfall-Früherkennung durch ungewöhnliche Muster</em></li>
+<li><strong>High Frequency Trading</strong> → <em>Streaming Data Processing für Live-Überwachung</em></li>
+</ol>
+</div>
+
+<h3 id="technologie-stack">⚙️ Technologie Stack (Production-Ready)</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+<div>
+<h4>🚀 Data Infrastructure</h4>
+<ul>
+<li><strong>Streaming</strong>: Apache Kafka, Spark, FastAPI</li>
+<li><strong>Storage</strong>: Amazon S3, MySQL, PostgreSQL</li>
+<li><strong>Processing</strong>: Pandas, NumPy, dbt</li>
+</ul>
+</div>
+<div>
+<h4>🤖 ML & Analytics</h4>
+<ul>
+<li><strong>ML Frameworks</strong>: Scikit-learn, TensorFlow, PyTorch</li>
+<li><strong>Time Series</strong>: ARIMA, LSTM, Seasonal Decomposition</li>
+<li><strong>Visualization</strong>: Matplotlib, Seaborn, Plotly</li>
+</ul>
+</div>
+</div>
+
+<h3>💡 Weitere Projekt-Ideen</h3>
+<ul>
+<li><strong>Audio Analytics</strong>: Normale Hausgeräusche vs. Notfall-Schreie</li>
+<li><strong>Multi-Sensor Fusion</strong>: Energy + Motion + Audio für höhere Genauigkeit</li>
+<li><strong>Scouting-Transfer</strong>: Ähnliche Haushalte finden für bessere Baselines</li>
+</ul>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="technische-implementierung">5. Technische Implementierung bei VELI 🔧</h2>
+
+<h3>🏗️ Production-Ready Architecture</h3>
+
+<h4>Data Pipeline (Real-time):</h4>
+<pre><code>
+Smart Meter → Kafka Streams → Feature Engineering → ML Models → Alert System
+     ↓
+   S3 Data Lake ← Historical Patterns ← User Behavior Learning
+</code></pre>
+
+<h4>🤖 Machine Learning Architektur:</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h5>✅ Model Strategy:</h5>
+<ul>
+<li><strong>Personalisierte Modelle</strong>: Ein Modell pro Haushalt</li>
+<li><strong>Ensemble Approach</strong>: Mehrere Anomalie-Detection Methoden</li>
+<li><strong>Online Learning</strong>: Kontinuierliche Anpassung</li>
+<li><strong>Explainable AI</strong>: Nachvollziehbare Alarme</li>
+</ul>
+</div>
+<div>
+<h5>⚡ Skalierbarkeit:</h5>
+<ul>
+<li><strong>Multi-Tenant Architecture</strong>: Tausende Haushalte parallel</li>
+<li><strong>Edge Computing</strong>: Lokale Vorverarbeitung (DSGVO)</li>
+<li><strong>Cloud Integration</strong>: Zentrale Modell-Updates</li>
+<li><strong>Auto-Scaling</strong>: Dynamische Ressourcen-Anpassung</li>
+</ul>
+</div>
+</div>
+
+<h3>📊 Feature Engineering (Energy-specific)</h3>
+<h4>Zeitreihen-Features für Energiedaten:</h4>
+<ul>
+<li><strong>Tägliche Routinen</strong>: Morgen-Peak, Abend-Peak, Nacht-Minimum</li>
+<li><strong>Wochenmuster</strong>: Wochenende vs. Werktag Unterschiede</li>
+<li><strong>Saisonale Schwankungen</strong>: Heizung Winter, Klima Sommer</li>
+<li><strong>Geräte-Signaturen</strong>: Kühlschrank (konstant), Herd (Spitzen), TV (Abends)</li>
+</ul>
+
+<h3>🚨 Alert System Design</h3>
+<h4>Gradueller Alarm-Prozess:</h4>
+<ol>
+<li><strong>Soft Alert</strong> (Internal): Anomalie detected, monitoring increased</li>
+<li><strong>Family Notification</strong>: SMS/App push to relatives</li>
+<li><strong>Emergency Services</strong>: Automatic call if no response</li>
+<li><strong>False Positive Handling</strong>: User feedback loop for learning</li>
+</ol>
+
+<h4>🎯 Threshold Management:</h4>
+<ul>
+<li><strong>Dynamic Thresholds</strong>: Anpassung basierend auf Tageszeit/Saison</li>
+<li><strong>User Calibration</strong>: Persönliche Sensitivitäts-Einstellungen</li>
+<li><strong>Context Awareness</strong>: Urlaub-Modus, Gäste-Erkennung</li>
+</ul>
+</div>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="in-play-modellierung">2. In-Play Modellierung → Echtzeit-Verhaltensmuster 🏠⚡</h2>
+
+<div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107; margin-bottom: 20px;">
+<h4>🎯 Transfer auf VELI:</h4>
+<p><strong>Statt Fußball-Gewinnwahrscheinlichkeiten</strong> → <strong>Echtzeit-Wahrscheinlichkeit für Notfall/normale Aktivität</strong></p>
+</div>
+
+<h3>📊 Original Projekt: Live-Gewinnwahrscheinlichkeiten</h3>
+<p><strong>Problem:</strong> Ineffizienzen in Live-Quoten während 90-Minuten Spielzeit erkennen</p>
+
+<h4>Kernkomponenten:</h4>
+<ol>
+<li><strong>Live-Datenakquisition</strong>: Sport-APIs → Energy Smart Meter APIs</li>
+<li><strong>Feature Engineering</strong>: Rolling Statistics, Zeitreihen-Features</li>
+<li><strong>Modellierung</strong>: ARIMA, LSTM, Markov Ketten</li>
+<li><strong>Real-time Deployment</strong>: Prediction API mit Anomalie-Trigger</li>
+</ol>
+
+<h3>🏠 VELI Implementation</h3>
+<h4>Konkrete Anwendung:</h4>
+<ul>
+<li><strong>Baseline-Modellierung</strong>: 24h/7-Tage Energie-Zyklen pro Haushalt</li>
+<li><strong>Anomalie-Scores</strong>: Abweichungen von Gewohnheiten in Echtzeit</li>
+<li><strong>Adaptive Modelle</strong>: Lernen individueller Muster (Frühaufsteher vs. Nachtaktiv)</li>
+<li><strong>Gradueller Alarm</strong>: Soft → Family → Emergency Services</li>
+</ul>
+
+<h4>🤖 Genutzte Modelle & Herausforderungen:</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h5>✅ Erfolgreiche Ansätze:</h5>
+<ul>
+<li>Markov Ketten für State-Wechsel</li>
+<li>LSTM für komplexe Zeitreihen</li>
+<li>Ensemble Methods</li>
+</ul>
+</div>
+<div>
+<h5>⚠️ Challenges:</h5>
+<ul>
+<li>Unsaubere Live-Feeds</li>
+<li>Hohe Latenz-Anforderungen</li>
+<li>Viel Rauschen in Daten</li>
+</ul>
+</div>
+</div>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="anomalie-detection">3. Trading Anomalie Detection → Notfall-Früherkennung 🚨</h2>
+
+<div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107; margin-bottom: 20px;">
+<h4>🎯 Transfer auf VELI:</h4>
+<p><strong>Statt Trading-Betrug</strong> → <strong>Ungewöhnliche Energiemuster als Notfall-Indikatoren</strong></p>
+</div>
+
+<h3>📊 Original Projekt: Fraud Detection</h3>
+<p>ML-Algorithmen zur Erkennung anomaler Handelsaktivitäten in Kooperation mit Buchmacher</p>
+
+<h4>Anwendungsbereiche (Original → VELI):</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h5>🏈 Trading Domain:</h5>
+<ul>
+<li>Market Manipulation Detection</li>
+<li>Unusual Trading Patterns</li>
+<li>Account Anomalies</li>
+<li>Price Anomalies</li>
+</ul>
+</div>
+<div>
+<h5>🏠 VELI Domain:</h5>
+<ul>
+<li><strong>Sturz-Erkennung</strong>: Plötzlicher Aktivitäts-Stopp</li>
+<li><strong>Medizinische Notfälle</strong>: Lange Inaktivität</li>
+<li><strong>Verhaltensänderungen</strong>: Graduelle Routine-Shifts</li>
+<li><strong>False-Positive Minimierung</strong>: Urlaub vs. Notfall</li>
+</ul>
+</div>
+</div>
+
+<h3>🔧 Bewährte Methodiken</h3>
+<ol>
+<li><strong>Statistical Methods</strong>: Z-Score, IQR-basierte Outlier Detection</li>
+<li><strong>Machine Learning</strong>: Isolation Forest, One-Class SVM, Autoencoders</li>
+<li><strong>Time Series Anomalies</strong>: Change Point Detection, Seasonal Decomposition</li>
+<li><strong>Multi-variate Analyse</strong>: Kombination verschiedener Geräte-Signaturen</li>
+</ol>
+
+<h4>✅ Key Success Factors:</h4>
+<ul>
+<li><strong>Domain Knowledge Integration</strong>: Trading-Expertise → Energy-Consumption Patterns</li>
+<li><strong>Real-time Processing</strong>: Sub-second detection capabilities</li>
+<li><strong>Adaptive Thresholds</strong>: Per-user calibration (wie per-trader profiles)</li>
+</ul>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="veli-transfer">4. VELI Transfer - Hausnotrufsysteme aus Energiedaten 🏠</h2>
+
+<div style="background-color: #d4edda; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745; margin-bottom: 20px;">
+<h4>🎯 Kern-Konzept:</h4>
+<p><strong>Smarte Hausnotrufsysteme</strong> durch Analyse von Energieverbrauchsmustern - ähnlich wie Fußball mit 200+ Variablen pro Spiel haben wir heterogene Haushalts-Variablen in Echtzeit.</p>
+<p><strong>Challenge:</strong> Signal vs. Noise - Was ist Kühlschrank, Herd, Licht?</p>
+</div>
+
+<h3>🔄 Direct Transfer Mapping</h3>
+
+<h4 id="echtzeit-verhalten">🏠 1. In-Play → Echtzeit-Verhaltensmuster</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h5>⚽ Football Domain:</h5>
+<ul>
+<li>90-Minuten Spielzeit</li>
+<li>3 Ausgänge (H/D/A)</li>
+<li>Live Statistics (Ballbesitz, Schüsse)</li>
+<li>State Changes (Tor, Karte)</li>
+</ul>
+</div>
+<div>
+<h5>🏠 Energy Domain:</h5>
+<ul>
+<li>24h/7-Tage Zyklen</li>
+<li>Normal/Anomalie/Notfall</li>
+<li>Smart Meter Readings</li>
+<li>Activity Pattern Changes</li>
+</ul>
+</div>
+</div>
+
+<h4 id="notfall-erkennung">🚨 2. Fraud Detection → Notfall-Früherkennung</h4>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h5>💰 Trading Anomalies:</h5>
+<ul>
+<li>Market Manipulation</li>
+<li>Unusual Volume Spikes</li>
+<li>Account Behavior Changes</li>
+<li>Price Movement Patterns</li>
+</ul>
+</div>
+<div>
+<h5>🏠 Energy Anomalies:</h5>
+<ul>
+<li>Plötzliche Aktivitäts-Stopps</li>
+<li>Ungewöhnliche Spitzen</li>
+<li>Veränderte Tagesroutinen</li>
+<li>Geräte-Nutzungsmuster</li>
+</ul>
+</div>
+</div>
+
+<h3>🎯 Konkrete VELI Use Cases</h3>
+<ol>
+<li><strong>Sturz-Erkennung</strong>: Plötzlicher Stopp aller Aktivitäten nach normalem Muster</li>
+<li><strong>Medizinische Notfälle</strong>: Ungewöhnlich lange Inaktivität oder nächtliche Aktivität</li>
+<li><strong>Demenz-Früherkennung</strong>: Graduelle Verschiebung der Routinen</li>
+<li><strong>Präventive Alarme</strong>: Herd-vergessen, ungewöhnliche Nacht-Aktivität</li>
+</ol>
+
+<h3>� Weitere Projekt-Ideen</h3>
+<ul>
+<li><strong>Audio Analytics</strong>: Normale Hausgeräusche vs. Notfall-Schreie</li>
+<li><strong>Multi-Sensor Fusion</strong>: Energy + Motion + Audio für höhere Genauigkeit</li>
+<li><strong>Scouting-Transfer</strong>: Ähnliche Haushalte finden für bessere Baselines</li>
+</ul>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="challenges">7. Challenges & Lösungsansätze - Quick Reference ⚠️</h2>
+
+<h3>� Top 5 Critical Challenges</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; border-left: 4px solid #dc3545;">
+<h4>⚠️ Biggest Challenges:</h4>
+<ol>
+<li><strong>False Positive Rate</strong>: Balance Sicherheit vs. Fehlalarme</li>
+<li><strong>Class Imbalance</strong>: Wenige Notfälle vs. normale Aktivität</li>
+<li><strong>Concept Drift</strong>: Sich ändernde Gewohnheiten (Alter, Saison)</li>
+<li><strong>Real-time Latency</strong>: Sub-Sekunden für Notfälle</li>
+<li><strong>Data Quality</strong>: Missing values, sensor failures</li>
+</ol>
+</div>
+<div style="background-color: #d4edda; padding: 15px; border-radius: 5px; border-left: 4px solid #28a745;">
+<h4>✅ Proven Solutions:</h4>
+<ol>
+<li><strong>PR-AUC Optimization</strong>: Statt Accuracy fokus auf Precision-Recall</li>
+<li><strong>SMOTE + XGBoost</strong>: Robust gegen unbalanced data</li>
+<li><strong>Online Learning</strong>: Kontinuierliche Anpassung</li>
+<li><strong>Edge Computing</strong>: Lokale Verarbeitung</li>
+<li><strong>Real-time Cleaning</strong>: Streaming data validation</li>
+</ol>
+</div>
+</div>
+
+<h3>📊 Domain-Specific Herausforderungen</h3>
+
+<h4>🤖 ML Challenges:</h4>
+<ul>
+<li><strong>Explainable AI</strong>: Nachvollziehbare Alarme (Regulatorik)</li>
+<li><strong>Personalization vs. Generalization</strong>: Balance zwischen Individual- und Global-Modellen</li>
+<li><strong>Multi-variate Dependencies</strong>: Korrelationen zwischen Geräten verstehen</li>
+</ul>
+
+<h4>👥 User & Acceptance:</h4>
+<ul>
+<li><strong>Generationsspezifik</strong>: Ältere Menschen vs. Tech-affine Nutzer</li>
+<li><strong>Privacy vs. Personalization</strong>: DSGVO-Balance</li>
+<li><strong>Individual Differences</strong>: Jeder Haushalt einzigartig</li>
+</ul>
+
+<h4>⚡ Technical Infrastructure:</h4>
+<ul>
+<li><strong>99.99% Verfügbarkeit</strong>: Kritische Systeme</li>
+<li><strong>Bandbreiten-Limitierungen</strong>: Ländliche Gebiete</li>
+<li><strong>Multi-Tenant Isolation</strong>: Tausende Haushalte parallel</li>
+</ul>
+
+<h3>💡 Strategic Solutions</h3>
+<ul>
+<li><strong>Ensemble Methods</strong>: Mehrere Modelle für Zuverlässigkeit</li>
+<li><strong>Graduelle Alarmierung</strong>: Soft → Family → Emergency</li>
+<li><strong>A/B Testing</strong>: Kontinuierliche Algorithmus-Optimierung</li>
+<li><strong>DevOps für ML</strong>: Automated testing + deployment</li>
+</ul>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="data-cleaning-cheatsheet">8. Data Cleaning Cheatsheet - Python Quick Reference 📋</h2>
+
+<h3>⚡ Essential Functions (Copy-Paste Ready)</h3>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div>
+<h4>🔍 Quick Diagnostics:</h4>
+<pre><code>
+# Instant Data Quality Check
+df.info()
+df.isnull().sum()
+df.describe()
+
+# Missing Value Visualization
+import missingno as msno
+msno.matrix(df)
+</code></pre>
+</div>
+<div>
+<h4>⚡ Fast Cleaning:</h4>
+<pre><code>
+# Time-aware Interpolation
+df['energy'] = df['energy'].interpolate(method='time')
+
+# Outlier Removal (IQR)
+Q1, Q3 = df['consumption'].quantile([0.25, 0.75])
+IQR = Q3 - Q1
+df = df[~((df['consumption'] < Q1-1.5*IQR) | 
+          (df['consumption'] > Q3+1.5*IQR))]
+</code></pre>
+</div>
+</div>
+
+<h4>🏠 Energy-Specific Cleaning Pipeline:</h4>
+<pre><code>
+def clean_energy_data(df):
+    # 1. Remove impossible values
+    df.loc[df['consumption'] < 0, 'consumption'] = np.nan
+    df.loc[df['consumption'] > 10 * df['consumption'].median(), 'consumption'] = np.nan
+    
+    # 2. Handle timestamps
+    df = df.drop_duplicates(subset=['timestamp']).set_index('timestamp').sort_index()
+    
+    # 3. Resample to regular intervals
+    df = df.resample('15T').mean()
+    
+    # 4. Smart interpolation (max 4 consecutive)
+    df['consumption'] = df['consumption'].interpolate(method='time', limit=4)
+    
+    return df
+</code></pre>
+
+<h4>� Advanced Methods (Production-Ready):</h4>
+<ul>
+<li><strong>Seasonal Interpolation</strong>: Nutzt 24h-Zyklen für Missing Values</li>
+<li><strong>KNN Imputation</strong>: Für korrelierte Features (Temperatur ↔ Heizung)</li>
+<li><strong>Real-time Cleaning</strong>: Streaming-ready für Live-Daten</li>
+<li><strong>Quality Validation</strong>: Automated before/after reports</li>
+</ul>
+
+<h3>💡 VELI Best Practices</h3>
+<ul>
+<li><strong>Domain Knowledge</strong>: Negative consumption = impossible</li>
+<li><strong>Time-aware</strong>: Always use <code>method='time'</code> for timestamps</li>
+<li><strong>Limit consecutive</strong>: Max 4 interpolated values in row</li>
+<li><strong>Validate results</strong>: Quality checks before/after cleaning</li>
+</ul>
+
+<p><em>→ Full code examples available in sections below</em></p>
+</div>
+
+<hr>
+
+<div class="section">
+<h2 id="monitoring-skalierung">📊 Monitoring & Skalierung auf >100 Häuser</h2>
+
+<h3>🏗️ MLOps Architecture für Production Scale</h3>
+
+<h4>1. Zentrales ML-Ops Dashboard</h4>
+<pre><code>
+# MLflow Integration für Model Tracking
+import mlflow
+import mlflow.sklearn
+from evidently import ColumnMapping
+from evidently.report import Report
+from evidently.metric_preset import DataDriftPreset, TargetDriftPreset
+
+# Model Registry Management
+def register_house_model(house_id, model, metrics):
+    with mlflow.start_run(run_name=f"house_{house_id}_model"):
+        mlflow.log_params({
+            "house_id": house_id,
+            "model_type": "lstm_autoencoder",
+            "training_period": "30_days"
+        })
+        mlflow.log_metrics(metrics)
+        mlflow.sklearn.log_model(model, f"anomaly_detector_{house_id}")
+        
+        # Model versioning
+        model_uri = f"runs:/{mlflow.active_run().info.run_id}/anomaly_detector_{house_id}"
+        mlflow.register_model(model_uri, f"HouseAnomalyDetector_{house_id}")
+
+# Evidently AI für Data Drift Detection
+def monitor_data_drift(reference_data, current_data, house_id):
+    column_mapping = ColumnMapping(
+        prediction='anomaly_score',
+        numerical_features=['energy_consumption', 'temperature'],
+        categorical_features=['device_status', 'time_of_day']
+    )
+    
+    drift_report = Report(metrics=[
+        DataDriftPreset(),
+        TargetDriftPreset()
+    ])
+    
+    drift_report.run(reference_data=reference_data, 
+                    current_data=current_data, 
+                    column_mapping=column_mapping)
+    
+    # Save drift report
+    drift_report.save_html(f"reports/drift_report_house_{house_id}.html")
+    return drift_report
+</code></pre>
+
+<h4>2. Per-Tenant Konfiguration & Isolation</h4>
+<pre><code>
+# Multi-Tenant Model Management
+class MultiTenantAnomalyDetector:
+    def __init__(self):
+        self.house_models = {}
+        self.house_configs = {}
+        self.global_thresholds = {}
+        
+    def register_house(self, house_id, config):
+        """Registriere neues Haus mit individueller Konfiguration"""
+        self.house_configs[house_id] = {
+            'baseline_consumption': config.get('baseline_consumption', 2.5),
+            'anomaly_threshold': config.get('anomaly_threshold', 0.85),
+            'alert_cooldown': config.get('alert_cooldown', 300),  # 5 min
+            'seasonal_patterns': config.get('seasonal_patterns', True),
+            'family_size': config.get('family_size', 1),
+            'house_type': config.get('house_type', 'apartment')
+        }
+        
+    def get_house_metrics(self, house_id):
+        """Berechne Metriken isoliert pro Haus"""
+        if house_id not in self.house_models:
+            return None
+            
+        model = self.house_models[house_id]
+        config = self.house_configs[house_id]
+        
+        # House-specific metrics calculation
+        metrics = {
+            'false_positive_rate': self._calculate_fpr(house_id),
+            'detection_latency': self._calculate_latency(house_id),
+            'model_drift': self._calculate_drift(house_id),
+            'data_quality_score': self._calculate_data_quality(house_id),
+            'uptime_percentage': self._calculate_uptime(house_id)
+        }
+        
+        return metrics
+
+# Database Schema für Multi-Tenant Monitoring
+house_monitoring_schema = """
+CREATE TABLE house_monitoring (
+    house_id VARCHAR(50) NOT NULL,
+    timestamp DATETIME NOT NULL,
+    metric_name VARCHAR(100) NOT NULL,
+    metric_value FLOAT,
+    threshold_lower FLOAT,
+    threshold_upper FLOAT,
+    alert_triggered BOOLEAN DEFAULT FALSE,
+    INDEX idx_house_time (house_id, timestamp),
+    INDEX idx_metric (metric_name)
+);
+
+CREATE TABLE global_anomalies (
+    detection_id UUID PRIMARY KEY,
+    house_id VARCHAR(50) NOT NULL,
+    anomaly_type ENUM('consumption', 'pattern', 'device', 'emergency'),
+    severity ENUM('low', 'medium', 'high', 'critical'),
+    confidence_score FLOAT,
+    timestamp DATETIME,
+    resolved BOOLEAN DEFAULT FALSE,
+    INDEX idx_house_severity (house_id, severity),
+    INDEX idx_timestamp (timestamp)
+);
+"""
+</code></pre>
+
+<h3>🌐 Globales Aggregat & Cross-House Analytics</h3>
+
+<h4>3. Outlier Detection zwischen Häusern</h4>
+<pre><code>
+# Cross-House Pattern Analysis
+def detect_house_outliers(all_houses_data):
+    """Identifiziere Häuser mit auffälligen Abweichungen"""
+    
+    # Berechne globale Metriken
+    global_metrics = {}
+    for house_id, data in all_houses_data.items():
+        global_metrics[house_id] = {
+            'avg_daily_consumption': data['consumption'].resample('D').mean().mean(),
+            'consumption_volatility': data['consumption'].std(),
+            'peak_usage_time': data.groupby(data.index.hour)['consumption'].mean().idxmax(),
+            'anomaly_frequency': (data['anomaly_score'] > 0.8).sum() / len(data),
+            'data_gaps': data['consumption'].isnull().sum() / len(data)
+        }
+    
+    # Outlier Detection auf Haus-Ebene
+    df_metrics = pd.DataFrame(global_metrics).T
+    
+    outlier_houses = {}
+    for metric in df_metrics.columns:
+        Q1 = df_metrics[metric].quantile(0.25)
+        Q3 = df_metrics[metric].quantile(0.75)
+        IQR = Q3 - Q1
+        
+        outliers = df_metrics[
+            (df_metrics[metric] < Q1 - 1.5 * IQR) | 
+            (df_metrics[metric] > Q3 + 1.5 * IQR)
+        ].index.tolist()
+        
+        outlier_houses[metric] = outliers
+    
+    return outlier_houses, df_metrics
+
+# Automated House Health Scoring
+def calculate_house_health_score(house_id, metrics):
+    """Berechne Overall Health Score pro Haus (0-100)"""
+    weights = {
+        'data_quality': 0.25,
+        'model_performance': 0.30,
+        'alert_accuracy': 0.25,
+        'system_uptime': 0.20
+    }
+    
+    # Normalisierte Scores (0-100)
+    scores = {
+        'data_quality': min(100, (1 - metrics['data_gaps']) * 100),
+        'model_performance': min(100, metrics['model_accuracy'] * 100),
+        'alert_accuracy': min(100, (1 - metrics['false_positive_rate']) * 100),
+        'system_uptime': metrics['uptime_percentage']
+    }
+    
+    weighted_score = sum(scores[key] * weights[key] for key in weights.keys())
+    return weighted_score, scores
+</code></pre>
+
+<h4>4. Periodisches Monitoring & Reporting</h4>
+<pre><code>
+# Automated Monthly Model Health Report
+class ModelHealthReporter:
+    def __init__(self, db_connection):
+        self.db = db_connection
+        
+    def generate_monthly_report(self, year, month):
+        """Generiere monatlichen Model Health Report"""
+        
+        report_data = {
+            'period': f"{year}-{month:02d}",
+            'total_houses': self._count_active_houses(year, month),
+            'system_overview': self._get_system_overview(year, month),
+            'house_rankings': self._rank_houses_by_health(year, month),
+            'global_trends': self._analyze_global_trends(year, month),
+            'recommendations': self._generate_recommendations(year, month)
+        }
+        
+        # Generate HTML Report
+        html_report = self._render_html_report(report_data)
+        
+        # Send to stakeholders
+        self._distribute_report(html_report, year, month)
+        
+        return report_data
+    
+    def _get_system_overview(self, year, month):
+        query = f"""
+        SELECT 
+            COUNT(DISTINCT house_id) as active_houses,
+            AVG(CASE WHEN metric_name = 'false_positive_rate' THEN metric_value END) as avg_fpr,
+            AVG(CASE WHEN metric_name = 'detection_latency' THEN metric_value END) as avg_latency,
+            SUM(CASE WHEN alert_triggered = TRUE THEN 1 ELSE 0 END) as total_alerts,
+            AVG(CASE WHEN metric_name = 'uptime_percentage' THEN metric_value END) as avg_uptime
+        FROM house_monitoring 
+        WHERE YEAR(timestamp) = {year} AND MONTH(timestamp) = {month}
+        """
+        
+        return self.db.execute(query).fetchone()
+    
+    def _rank_houses_by_health(self, year, month):
+        """Ranking der Häuser nach Health Score"""
+        house_scores = {}
+        
+        for house_id in self._get_active_houses(year, month):
+            metrics = self._get_house_metrics(house_id, year, month)
+            health_score, _ = calculate_house_health_score(house_id, metrics)
+            house_scores[house_id] = health_score
+        
+        # Sortiere nach Health Score
+        ranked_houses = sorted(house_scores.items(), 
+                             key=lambda x: x[1], 
+                             reverse=True)
+        
+        return ranked_houses
+    
+    def _generate_recommendations(self, year, month):
+        """Automatische Handlungsempfehlungen"""
+        recommendations = []
+        
+        # Häuser mit niedrigem Health Score
+        low_health_houses = [h for h, score in self._rank_houses_by_health(year, month) 
+                           if score < 70]
+        
+        if low_health_houses:
+            recommendations.append({
+                'type': 'urgent',
+                'title': 'Häuser mit kritischem Health Score',
+                'houses': low_health_houses,
+                'action': 'Model Retraining oder Hardware Check erforderlich'
+            })
+        
+        # Hohe False Positive Rate
+        high_fpr_houses = self._get_houses_with_high_fpr(year, month, threshold=0.15)
+        if high_fpr_houses:
+            recommendations.append({
+                'type': 'optimization',
+                'title': 'Threshold Anpassung erforderlich',
+                'houses': high_fpr_houses,
+                'action': 'Anomaly Thresholds kalibrieren'
+            })
+        
+        return recommendations
+
+# Automated Alerting System
+def setup_monitoring_alerts():
+    """Konfiguriere automatische Alerts für kritische Metriken"""
+    
+    alert_rules = {
+        'high_fpr': {
+            'condition': 'false_positive_rate > 0.20',
+            'severity': 'medium',
+            'notification': 'team_slack'
+        },
+        'system_down': {
+            'condition': 'uptime_percentage < 95',
+            'severity': 'critical',
+            'notification': 'pagerduty'
+        },
+        'data_quality': {
+            'condition': 'data_gaps > 0.10',
+            'severity': 'medium',
+            'notification': 'email'
+        },
+        'model_drift': {
+            'condition': 'model_drift > 0.30',
+            'severity': 'high',
+            'notification': 'team_slack'
+        }
+    }
+    
+    return alert_rules
+</code></pre>
+
+<h3>❓ Fragen an das VELI Team - Aktueller Stand</h3>
+
+<h4>🔍 Monitoring Status Quo</h4>
+<div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
+<h5>Kritische Fragen zur aktuellen Infrastruktur:</h5>
+<ul>
+<li><strong>Wie wird aktuell das System überwacht?</strong>
+   <ul>
+   <li>Gibt es bereits ein Dashboard? (Grafana, Custom, etc.)</li>
+   <li>Welche Metriken werden getrackt?</li>
+   <li>Wie schnell werden Systemausfälle erkannt?</li>
+   </ul>
+</li>
+
+<li><strong>Model Performance Monitoring:</strong>
+   <ul>
+   <li>Wird Model Drift überwacht?</li>
+   <li>Wie wird False Positive Rate gemessen?</li>
+   <li>Gibt es A/B Testing für Modell-Updates?</li>
+   </ul>
+</li>
+
+<li><strong>Skalierung & Multi-Tenancy:</strong>
+   <ul>
+   <li>Wie viele Häuser werden aktuell überwacht?</li>
+   <li>Sind Daten/Modelle pro Haus isoliert?</li>
+   <li>Gibt es zentrale vs. dezentrale Verarbeitung?</li>
+   </ul>
+</li>
+
+<li><strong>Incident Management:</strong>
+   <ul>
+   <li>Wie werden Alarme priorisiert? (Severity Levels)</li>
+   <li>Gibt es SLA Vereinbarungen mit Kunden?</li>
+   <li>Wer ist 24/7 on-call bei kritischen Ausfällen?</li>
+   </ul>
+</li>
+
+<li><strong>Data Pipeline & Quality:</strong>
+   <ul>
+   <li>Wie wird Datenqualität überwacht?</li>
+   <li>Gibt es automatisierte Data Validation?</li>
+   <li>Wie werden Missing Values aktuell behandelt?</li>
+   </ul>
+</li>
+</ul>
+</div>
+
+<h4>💡 Verbesserungsvorschläge basierend auf Antworten</h4>
+<pre><code>
+# Template für Monitoring Enhancement Roadmap
+monitoring_roadmap = {
+    "Phase 1 - Foundation (Monat 1-2)": [
+        "MLflow Setup für Model Versioning",
+        "Basic Health Dashboard (Grafana/Streamlit)",
+        "Automated Data Quality Checks",
+        "Alert System (PagerDuty/Slack Integration)"
+    ],
+    
+    "Phase 2 - Scale (Monat 3-4)": [
+        "Multi-Tenant Model Isolation",
+        "Cross-House Analytics Dashboard", 
+        "Evidently AI für Drift Detection",
+        "Automated Model Retraining Pipeline"
+    ],
+    
+    "Phase 3 - Intelligence (Monat 5-6)": [
+        "Predictive Maintenance für Modelle",
+        "Auto-Scaling basierend auf Load",
+        "Advanced Anomaly Correlation",
+        "Self-Healing System Components"
+    ]
+}
+
+# KPI Tracking für Monitoring Success
+monitoring_kpis = {
+    "System Reliability": ["99.9% Uptime", "< 30s Alert Response"],
+    "Model Performance": ["< 5% False Positive Rate", "< 10s Detection Latency"],
+    "Operational Efficiency": ["< 2h Mean Time to Recovery", "80% Automated Incidents"],
+    "Scalability": ["Linear Cost Growth", "< 100ms per additional house"]
+}
+</code></pre>
+</div>
+
+<hr>
+
+<div style="text-align: center; margin-top: 50px; color: #7f8c8d; font-size: 0.9em;">
+<p>Data Science Projekte Übersicht | Erstellt für VELI Bewerbungsgespräch | 2025</p>
+</div>
+
+</body>
+</html>
